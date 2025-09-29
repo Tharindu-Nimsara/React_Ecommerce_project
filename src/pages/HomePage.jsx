@@ -5,6 +5,12 @@ import './HomePage.css'
 
 export default function HomePage() {
 
+  fetch('http://localhost:3000/api/products').then((response)=>{
+      response.json().then((data)=>{
+        console.log(data)
+      })
+  })
+
   return (
     <>
         <title>Ecommerce Project</title>
@@ -71,3 +77,4 @@ export default function HomePage() {
     </>
   )
 }
+ 
