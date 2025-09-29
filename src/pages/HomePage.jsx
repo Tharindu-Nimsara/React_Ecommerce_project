@@ -2,20 +2,19 @@ import axios from 'axios';
 import Header from '../components/Header'
 import './HomePage.css'
 import { useEffect, useState } from 'react';
+import formatMoney from '../utils/money';
 
-export default function HomePage() {
+export default function HomePage({cart}) {
 
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  
 
   useEffect(()=>{
     axios.get('/api/products').then((response)=>{
       setProducts(response.data);
     })
 
-    axios.get('/api/cart-items').then((response)=>{
-      setCart(response.data);
-    })
+    
 
   }, []); //empty dependence array means this will run only once
   
@@ -49,7 +48,8 @@ export default function HomePage() {
             </div>
 
             <div className="product-price">
-              ${(item.priceCents / 100).toFixed(2)}
+              {formatMoney(item.priceCents)}
+            
             </div>
 
             <div className="product-quantity-container">
