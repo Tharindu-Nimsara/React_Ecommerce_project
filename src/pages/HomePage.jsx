@@ -1,13 +1,18 @@
 import axios from 'axios';
 import Header from '../components/Header'
-import { products } from '../../starting-code/data/products';
 import './HomePage.css'
+import { useEffect, useState } from 'react';
 
 export default function HomePage() {
 
-  axios.get('http://localhost:3000/api/products').then((response)=>{
-      
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=>{
+      axios.get('http://localhost:3000/api/products').then((response)=>{
+      setProducts(response.data);
   })
+  }, []); //empty dependence array means this will run only once
+  
 
   return (
     <>
