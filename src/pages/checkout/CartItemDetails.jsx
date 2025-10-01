@@ -1,7 +1,7 @@
 import React from "react";
 import formatMoney from "../../utils/money";
 
-export default function CartItemDetails({cartItem}) {
+export default function CartItemDetails({ cartItem, deleteCartItem }) {
   return (
     <div>
       <div className="cart-item-details">
@@ -15,7 +15,16 @@ export default function CartItemDetails({cartItem}) {
             <span className="quantity-label">{cartItem.quantity}</span>
           </span>
           <span className="update-quantity-link link-primary">Update</span>
-          <span className="delete-quantity-link link-primary">Delete</span>
+          <span
+            className="delete-quantity-link link-primary"
+            onClick={() => {
+              deleteCartItem();
+            }}
+            // this is for avoiding an error
+            onChange={() => {}}
+          >
+            Delete
+          </span>
         </div>
       </div>
     </div>
