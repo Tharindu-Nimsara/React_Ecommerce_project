@@ -5,7 +5,7 @@ import axios from "axios";
 import OrderDetailsGrid from "./OrderDetailsGrid";
 import OrderHeader from "./OrderHeader";
 
-export default function OrdersPage({ cart }) {
+export default function OrdersPage({ cart, loadCart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function OrdersPage({ cart }) {
               <div key={order.id} className="order-container">
                 <OrderHeader order={order} />
                 
-                <OrderDetailsGrid order_product={order.products} orderId={order.id} />
+                <OrderDetailsGrid order_product={order.products} orderId={order.id} loadCart={loadCart} />
                 
               </div>
             );
