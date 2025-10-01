@@ -19,7 +19,6 @@ export default function Product({ item, loadCart }) {
     await loadCart();
 
     setCls("added-to-cart-visible")
-    
   };
 
   return (
