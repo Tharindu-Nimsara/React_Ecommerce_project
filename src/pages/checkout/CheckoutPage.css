@@ -115,9 +115,20 @@
   margin-bottom: 5px;
 }
 
+.checkout-quantity-input{
+  width: 50px;
+  
+  opacity: 0;
+}
+
 .checkout-page .product-quantity .link-primary {
   margin-left: 3px;
 }
+
+.link-red{
+  color: red;
+}
+
 
 @media (max-width: 1000px) {
   .checkout-page .delivery-options {

@@ -30,6 +30,7 @@ export default function OrderSummary({ cart, deliveryOptions, loadCart }) {
                   <CartItemDetails
                     cartItem={cartItem}
                     deleteCartItem={deleteCartItem}
+                    loadCart={loadCart}
                   />
 
                   <DeliveryOptions
